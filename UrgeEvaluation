@@ -1,0 +1,684 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 13 09:55:58 2022
+
+@author: hugues.lamothe
+"""
+
+# =============================================================================
+# Je crée la fonction qui permet l'EVA du TOC après chaque image
+# =============================================================================
+def TouretteEvaluation():
+# =============================================================================
+    
+# =============================================================================
+# j'importe les packages nécessaires à la fonction
+# =============================================================================
+    import pygame as pg
+# =============================================================================
+    
+# =============================================================================
+# j'initie pygame
+# =============================================================================
+    pg.init()
+# =============================================================================
+
+# =============================================================================
+# je charge les font
+# =============================================================================
+    Font1 = pg.font.SysFont("Courier New", 60)
+    
+    Grey1 = [192, 192, 192]
+    Grey2 = [96, 96, 96]
+    Black1 = [0, 0, 0]
+    White1 = [255, 255, 255]
+# ============================================================================= 
+    
+# =============================================================================
+# Je lance la fonction à proprement parler
+# =============================================================================
+    Window1 = pg.display.set_mode((1920, 1080))
+    
+    Text1 = "Dans quelle mesure "
+    Text2 = "l'effort que vous avez produit"
+    Text3 = "pour retenir vos tics"
+    Text4 = "a t'il était important"
+    Text5 = "0 = aucun effort"
+    Text6 = "10 = effort maximal"
+    
+    x1 =  150
+    y1 = 800
+    
+    x2 = 300
+    x3 = 450
+    x4 = 600
+    x5 = 750
+    x6 = 900
+    x7 = 1050
+    x8 = 1200
+    x9 = 1350
+    x10 = 1500
+    x11 = 1650
+    
+    Value0 = "0"
+    Value1 = "1"
+    Value2 = "2"
+    Value3 = "3"
+    Value4 = "4"
+    Value5 = "5"
+    Value6 = "6"
+    Value7 = "7"
+    Value8 = "8"
+    Value9 = "9"
+    Value10 = "10"
+    
+    Click = 0
+    
+    while Click == 0:
+        pg.mouse.set_visible(True)
+        Window1.fill(Black1)
+        Window1.blit(Font1.render(Text1, False, White1), (625, 100))
+        Window1.blit(Font1.render(Text2, False, White1), (400, 200))
+        Window1.blit(Font1.render(Text3, False, White1), (575, 300))
+        Window1.blit(Font1.render(Text4, False, White1), (562, 400))
+        Window1.blit(Font1.render(Text5, False, White1), (675, 500))
+        Window1.blit(Font1.render(Text6, False, White1), (625, 600))
+        pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+        for event in pg.event.get():
+            if x1 + 100 >= pg.mouse.get_pos()[0] >= x1 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey1, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 0
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey1, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x2 + 100 >= pg.mouse.get_pos()[0] >= x2 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 1
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x3 + 100 >= pg.mouse.get_pos()[0] >= x3 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 2
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x4 + 100 >= pg.mouse.get_pos()[0] >= x4 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 3
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x5 + 100 >= pg.mouse.get_pos()[0] >= x5 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 4
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x6 + 100 >= pg.mouse.get_pos()[0] >= x6 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 5
+                    print(Score)
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x7 + 100 >= pg.mouse.get_pos()[0] >= x7 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 6
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x8 + 100 >= pg.mouse.get_pos()[0] >= x8 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                if event.type == pg.MOUSEBUTTONUP:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    return 7
+                    Click += 1
+                else:
+                    pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey1, (x8, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                    pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                    Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                    Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                    Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                    Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                    Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                    Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                    Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                    Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                    Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                    Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                    Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                    pg.display.update()
+                    continue
+            elif x9 + 100 >= pg.mouse.get_pos()[0] >= x9 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                 if event.type == pg.MOUSEBUTTONUP:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     return 8
+                     Click += 1
+                 else:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     continue
+            elif x10 + 100 >= pg.mouse.get_pos()[0] >= x10 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                 if event.type == pg.MOUSEBUTTONUP:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     return 9
+                     Click += 1
+                 else:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     continue
+            elif x11 + 100 >= pg.mouse.get_pos()[0] >= x11 and y1 + 100 >= pg.mouse.get_pos()[1] >= y1:
+                 if event.type == pg.MOUSEBUTTONUP:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     return 10
+                     Click += 1
+                 else:
+                     pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                     pg.draw.rect(Window1, Grey1, (x11, y1, 100, 100))
+                     Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                     Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                     Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                     Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                     Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                     Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                     Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                     Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                     Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                     Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                     Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                     pg.display.update()
+                     continue
+            else:
+                pg.draw.rect(Window1, Grey2, (x1, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x2, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x3, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x4, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x5, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x6, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x7, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x8, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x9, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x10, y1, 100, 100))
+                pg.draw.rect(Window1, Grey2, (x11, y1, 100, 100))
+                Window1.blit(Font1.render(Value0, False, White1), (185, 815))
+                Window1.blit(Font1.render(Value1, False, White1), (335, 815))
+                Window1.blit(Font1.render(Value2, False, White1), (485, 815))
+                Window1.blit(Font1.render(Value3, False, White1), (635, 815))
+                Window1.blit(Font1.render(Value4, False, White1), (785, 815))
+                Window1.blit(Font1.render(Value5, False, White1), (935, 815))
+                Window1.blit(Font1.render(Value6, False, White1), (1085, 815))
+                Window1.blit(Font1.render(Value7, False, White1), (1235, 815))
+                Window1.blit(Font1.render(Value8, False, White1), (1385, 815))
+                Window1.blit(Font1.render(Value9, False, White1), (1535, 815))
+                Window1.blit(Font1.render(Value10, False, White1), (1665, 815))
+                pg.display.update()
