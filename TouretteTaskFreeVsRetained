@@ -1,0 +1,382 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 12 18:06:36 2022
+
+@author: hugues.lamothe
+"""
+
+# =============================================================================
+# Paramètres de base
+# =============================================================================
+import pygame as pg
+import pandas as pd
+import time
+import os
+
+os.environ['SDL_VIDEO_CENTERED'] = '1'
+# =============================================================================
+
+# =============================================================================
+# Chemin où sont stocker les fonctions que j'ai créées
+# =============================================================================
+os.chdir("E:/Python")
+from TouretteEvaluation import TouretteEvaluation
+# =============================================================================
+
+# =============================================================================
+# Je crée le dictionnaire dont je vais me servir pour stocker les scores
+# =============================================================================
+ScoreDictionnary = {}
+# =============================================================================
+
+# =============================================================================
+# fonts and colors
+# =============================================================================
+pg.init()
+
+Font1 = pg.font.SysFont("Courier New", 60)
+
+Grey1 = [192, 192, 192]
+Grey2 = [96, 96, 96]
+Black1 = [0, 0, 0]
+White1 = [255, 255, 255]
+# =============================================================================
+
+# =============================================================================
+# J'initialise le temps
+# =============================================================================
+TimerStart = time.time()
+# =============================================================================
+
+# =============================================================================
+# Premier panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "Bienvenue"
+Text2 = "Merci pour votre participation"
+Text3 = "à ce protocole de recherche"
+
+while time.time() <= TimerStart + 6:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (775, 300))
+    Window1.blit(Font1.render(Text2, False, White1), (425, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (475, 600))
+    pg.display.update()
+# ============================================================================= 
+
+# =============================================================================
+# Second panneau 
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "Dans ce protocole de recherche"
+Text2 = "nous allons vous demander successivement"
+Text3 = "de laisser aller vos tics librement"
+Text4 = "pendant 10 minutes"
+Text5 = "puis de les retenir autant que vous pourrez"
+Text6 = "pendant 10 minutes également"
+Text7 = "et ceci à 2 reprises à chaque fois"
+
+
+while TimerStart + 6 < time.time() <= TimerStart + 12:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (425, 200))
+    Window1.blit(Font1.render(Text2, False, White1), (250, 300))
+    Window1.blit(Font1.render(Text3, False, White1), (350, 400))
+    Window1.blit(Font1.render(Text4, False, White1), (625, 500))
+    Window1.blit(Font1.render(Text5, False, White1), (200, 600))
+    Window1.blit(Font1.render(Text6, False, White1), (450, 700))
+    Window1.blit(Font1.render(Text7, False, White1), (325, 800))
+    pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# Troisième panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "A chaque fois"
+Text2 = "une consigne vous indiquera"
+Text3 = "si vous devez retenir vos tics"
+Text4 = "ou si vous pouvez les laisser aller"
+Text5 = "et ceci pendant 10 minutes."
+Text6 = "Un signal de fin vous indiquera"
+Text7 = "la fin des 10 minutes"
+
+while TimerStart + 12 < time.time() <= TimerStart + 18:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (675, 200))
+    Window1.blit(Font1.render(Text2, False, White1), (425, 300))
+    Window1.blit(Font1.render(Text3, False, White1), (375, 400))
+    Window1.blit(Font1.render(Text4, False, White1), (300, 500))
+    Window1.blit(Font1.render(Text5, False, White1), (475, 600))
+    Window1.blit(Font1.render(Text6, False, White1), (375, 700))
+    Window1.blit(Font1.render(Text7, False, White1), (575, 800))
+    pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# Troisième panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "Après chaque consigne"
+Text2 = "une croix de fixation apparaitra,"
+Text3 = "vous devrez la fixer"
+Text4 = "tout en suivant la consigne qui a précédé"
+Text5 = "soit de laisser aller vos tics"
+Text6 = "soit de les retenir."
+Text7 = "Un signal indiquera la fin des 10 minutes"
+
+while TimerStart + 18 < time.time() <= TimerStart + 24:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (600, 200))
+    Window1.blit(Font1.render(Text2, False, White1), (375, 300))
+    Window1.blit(Font1.render(Text3, False, White1), (625, 400))
+    Window1.blit(Font1.render(Text4, False, White1), (225, 500))
+    Window1.blit(Font1.render(Text5, False, White1), (450, 600))
+    Window1.blit(Font1.render(Text6, False, White1), (650, 700))
+    Window1.blit(Font1.render(Text7, False, White1), (225, 800))
+    pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# Cinquième panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "Après les sessions"
+Text2 = "où vous devrez retenir vos tics,"
+Text3 = "vous devrez indiquer à quel point"
+Text4 = "il a été difficile de retenir vos tics,"
+Text5 = "ceci gràce à une échelle"
+Text6 = "allant de 0 pour 'aucun effort pour retenir mes tics'"
+Text7 = "à 10 pour 'effort maximum pour retenir mes tics'."
+Text8 = "Pour choisir,"
+Text9 = "vous devrez cliquer sur le chiffre correspondant"
+Text10 = "à l'intensité de votre effort pour retenir les tics"
+
+while TimerStart + 24 < time.time() <= TimerStart + 42:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (625, 200))
+    Window1.blit(Font1.render(Text2, False, White1), (375, 250))
+    Window1.blit(Font1.render(Text3, False, White1), (350, 300))
+    Window1.blit(Font1.render(Text4, False, White1), (250, 350))
+    Window1.blit(Font1.render(Text5, False, White1), (525, 450))
+    Window1.blit(Font1.render(Text6, False, White1), (25, 500))
+    Window1.blit(Font1.render(Text7, False, White1), (100, 550))
+    Window1.blit(Font1.render(Text8, False, White1), (725, 650))
+    Window1.blit(Font1.render(Text9, False, White1), (100, 700))
+    Window1.blit(Font1.render(Text10, False, White1), (50, 750))
+    pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# Sixième panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+Text1 = "Allons y pour un exemple"
+Text2 = "Si vous êtes prêt cliquez sur 'Exemple !'"
+Text3 = "Exemple!"
+x1 =  775
+y1 = 700
+
+Click = 0
+
+while Click == 0:
+    pg.mouse.set_visible(True)
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (500, 400))
+    Window1.blit(Font1.render(Text2, False, White1), (200, 500))
+    pg.draw.rect(Window1, Grey2, (x1, y1, 350, 75))
+    Window1.blit(Font1.render(Text3, False, White1), (815, 700))
+    for event in pg.event.get():
+        if 775 + 350 >= pg.mouse.get_pos()[0] >= 775 and 700 + 75 >= pg.mouse.get_pos()[1] >= 700:
+            if event.type == pg.MOUSEBUTTONUP:
+                pg.draw.rect(Window1, Grey1, (x1, y1, 350, 75))
+                Window1.blit(Font1.render(Text3, False, White1), (815, 700))
+                pg.display.update()
+                Click += 1
+            else:
+                pg.draw.rect(Window1, Grey1, (x1, y1, 350, 75))
+                Window1.blit(Font1.render(Text3, False, White1), (815, 700))
+                pg.display.update()
+                continue
+        else:
+            pg.draw.rect(Window1, Grey2, (x1, y1, 350, 75))
+            Window1.blit(Font1.render(Text3, False, White1), (815, 700))
+            pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# Bloc d'exemple
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+TimerStart = time.time()
+
+Text1 = "Laissez aller vos tics librement"
+Text2 = "sans pour autant vous forcer à en avoir"
+Text3 = "ceci pendant une minute"
+
+Text4 = "Retenez vos tics"
+
+while time.time() <= TimerStart + 6:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (400, 400))
+    Window1.blit(Font1.render(Text2, False, White1), (275, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+    
+while TimerStart + 6 < time.time() < TimerStart + 12:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+    
+while TimerStart + 12 < time.time() < TimerStart + 18:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text4, False, White1), (675, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+while TimerStart + 18 < time.time() < TimerStart + 24:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+TouretteEvaluation()
+# =============================================================================
+
+# =============================================================================
+# Septième panneau
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+pg.mouse.set_visible(True)
+
+Text1 = "Maintenant que vous avez compris"
+Text2 = "le principe de la tâche"
+Text3 = "Cliquez sur 'c'est parti!'"
+Text4 = "C'est parti!"
+
+x1 =  700
+y1 = 695
+
+Click = 0
+
+while Click == 0:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (350, 300))
+    Window1.blit(Font1.render(Text2, False, White1), (500, 400))
+    Window1.blit(Font1.render(Text3, False, White1), (465, 500))
+    pg.draw.rect(Window1, Grey2, (x1, y1, 425, 75))
+    Window1.blit(Font1.render(Text4, False, White1), (700, 700))
+    for event in pg.event.get():
+        if 700 + 400 >= pg.mouse.get_pos()[0] >= 700 and 695 + 75 >= pg.mouse.get_pos()[1] >= 695:
+            if event.type == pg.MOUSEBUTTONUP:
+                pg.draw.rect(Window1, Grey1, (x1, y1, 425, 75))
+                Window1.blit(Font1.render(Text4, False, White1), (700, 700))
+                pg.display.update()
+                Click += 1
+            else:
+                pg.draw.rect(Window1, Grey1, (x1, y1, 425, 75))
+                Window1.blit(Font1.render(Text4, False, White1), (700, 700))
+                pg.display.update()
+                continue
+        else:
+            pg.draw.rect(Window1, Grey2, (x1, y1, 425, 75))
+            Window1.blit(Font1.render(Text4, False, White1), (700, 700))
+            pg.display.update()
+# =============================================================================
+
+# =============================================================================
+# La tâche à proprement parlée
+# =============================================================================
+Window1 = pg.display.set_mode((1920, 1080))
+
+TimerStart = time.time()
+
+Text1 = "Laissez aller vos tics librement"
+Text2 = "sans pour autant vous forcer à en avoir"
+Text3 = "ceci pendant dix minute"
+
+Text4 = "Retenez vos tics"
+
+TouretteScore = []
+
+while time.time() <= TimerStart + 6:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (400, 400))
+    Window1.blit(Font1.render(Text2, False, White1), (275, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+    
+while TimerStart + 6 < time.time() < TimerStart + 12:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+    
+while TimerStart + 12 < time.time() < TimerStart + 18:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text4, False, White1), (675, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+while TimerStart + 18 < time.time() < TimerStart + 24:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+TouretteScore.append(TouretteEvaluation())
+
+TimerStart = time.time()
+
+while time.time() <= TimerStart + 6:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text1, False, White1), (400, 400))
+    Window1.blit(Font1.render(Text2, False, White1), (275, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+    
+while TimerStart + 6 < time.time() < TimerStart + 12:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+    
+while TimerStart + 12 < time.time() < TimerStart + 18:
+    Window1.fill(Black1)
+    Window1.blit(Font1.render(Text4, False, White1), (675, 500))
+    Window1.blit(Font1.render(Text3, False, White1), (550, 600))
+    pg.display.update()
+while TimerStart + 18 < time.time() < TimerStart + 24:
+    Window1.fill(Black1)
+    pg.draw.line(Window1, White1, (1920/2, 500), (1920/2, 580))
+    pg.draw.line(Window1, White1, (920, 1080/2), (1000, 1080/2))
+    pg.display.update()
+TouretteScore.append(TouretteEvaluation())
+# =============================================================================
+
+# =============================================================================
+# Fin du programme    
+# =============================================================================
+pg.quit()
+# =============================================================================
+
+# =============================================================================
+# je remplis mon dictionnaire
+# =============================================================================
+ScoreDictionnary["TouretteScore"] = TouretteScore
+print(ScoreDictionnary)
+# =============================================================================
+
+# =============================================================================
+# Je crée mon fichier txt avec mon dictionnaire dedans
+# =============================================================================
+SubjectID = input("Entrez l'identifiant du sujet: ")
+EEGType = input("Entrez le type d'EEG utilisé: ")
+df = pd.DataFrame(ScoreDictionnary)
+df.to_string("E:/Ecrits/Bourse fondamental/TouretteTask/SubjectResults/TouretteEvaluation{}{}.txt".format(SubjectID, EEGType))
+# =============================================================================
